@@ -4,44 +4,44 @@ import ListaSuspensa from '../ListaSuspensa';
 import Botao from '../Botao';
 import { useState } from 'react';
 
-const Formulario = ({aoColaboradorCadastrado, times}) => {
+const Formulario = ({aoCarroCadastrado, categorias}) => {
   const [nome, setNome] = useState("");
-  const [cargo, setCargo] = useState("");
+  const [preco, setPreco] = useState("");
   const [imagem, setImagem] = useState("");
-  const [time, setTime] = useState("");
+  const [categoria, setCategoria] = useState("");
 
   const aoSalvar = (event) => {
     event.preventDefault();
-    aoColaboradorCadastrado({
+    aoCarroCadastrado({
       nome: nome,
-      cargo: cargo,
+      preco: preco,
       imagem: imagem,
-      time: time
+      categoria: categoria
     });
     setNome("");
-    setCargo("");
+    setPreco("");
     setImagem("");
-    setTime("");
+    setCategoria("");
   }
 
   return (
     <section className='formulario'>
       <form onSubmit={aoSalvar}>
-        <h2>Preencha os dados para criar o card do colaborador</h2>
+        <h2>Preencha os dados para criar o card do carro</h2>
         <CampoTexto 
           label="Nome" 
-          placeholder="Digite seu nome" 
+          placeholder="Digite o nome do carro" 
           obrigatorio={true} 
           valor={nome} 
           aoAlterar={valor => setNome(valor)} 
         />
 
         <CampoTexto 
-          label="Cargo" 
-          placeholder="Digite seu cargo"
+          label="Preço" 
+          placeholder="Digite o preço do carro"
           obrigatorio={true}
-          valor={cargo} 
-          aoAlterar={valor => setCargo(valor)} 
+          valor={preco} 
+          aoAlterar={valor => setPreco(valor)} 
         />
 
         <CampoTexto 
@@ -54,10 +54,10 @@ const Formulario = ({aoColaboradorCadastrado, times}) => {
 
         <ListaSuspensa 
           obrigatorio={true} 
-          label="Time" 
-          itens={times}
-          valor={time} 
-          aoAlterar={valor => setTime(valor)} 
+          label="Categoria" 
+          itens={categorias}
+          valor={categoria} 
+          aoAlterar={valor => setCategoria(valor)} 
         />
 
         <Botao>
