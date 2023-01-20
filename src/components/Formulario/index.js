@@ -1,16 +1,19 @@
 import './Formulario.css';
-import CampoTexto from '../CampoTexto';
+import Campo from '../Campo';
 import ListaSuspensa from '../ListaSuspensa';
 import Botao from '../Botao';
 import { useState } from 'react';
+import hexToRgba from 'hex-to-rgba';
 
-const Formulario = ({aoCarroCadastrado, categorias}) => {
+const Formulario = ({aoCarroCadastrado, aoCategoriaCadatrada, categorias}) => {
   const [nome, setNome] = useState("");
   const [preco, setPreco] = useState("");
   const [imagem, setImagem] = useState("");
   const [categoria, setCategoria] = useState("");
+  const [nomeCategoria, setNomeCategoria] = useState("");
+  const [corCategoria, setCorCategoria] = useState("");
 
-  const aoSalvar = (event) => {
+  const aoSalvarCarro = (event) => {
     event.preventDefault();
     aoCarroCadastrado({
       nome: nome,
@@ -24,11 +27,22 @@ const Formulario = ({aoCarroCadastrado, categorias}) => {
     setCategoria("");
   }
 
+  const aoSalvarCategoria = (event) => {
+    event.preventDefault();
+    aoCategoriaCadatrada({
+      nome: nomeCategoria,
+      corPrimaria: corCategoria,
+      corSecundaria: hexToRgba(corCategoria, 0.6)
+    });
+    setNomeCategoria("");
+    setCorCategoria("");
+  }
+
   return (
     <section className='formulario'>
-      <form onSubmit={aoSalvar}>
+      <form onSubmit={aoSalvarCarro}>
         <h2>Preencha os dados para criar o card do carro</h2>
-        <CampoTexto 
+        <Campo 
           label="Nome" 
           placeholder="Digite o nome do carro" 
           obrigatorio={true} 
@@ -36,7 +50,7 @@ const Formulario = ({aoCarroCadastrado, categorias}) => {
           aoAlterar={valor => setNome(valor)} 
         />
 
-        <CampoTexto 
+        <Campo 
           label="Preço" 
           placeholder="Digite o preço do carro"
           obrigatorio={true}
@@ -44,7 +58,7 @@ const Formulario = ({aoCarroCadastrado, categorias}) => {
           aoAlterar={valor => setPreco(valor)} 
         />
 
-        <CampoTexto 
+        <Campo 
           label="Imagem" 
           placeholder="Informe o endereço da imagem"
           obrigatorio={false}
@@ -62,6 +76,29 @@ const Formulario = ({aoCarroCadastrado, categorias}) => {
 
         <Botao>
           Criar Card
+        </Botao>
+      </form>
+      <form onSubmit={aoSalvarCategoria}>
+        <h2>Preencha os dados para criar uma nova categoria</h2>
+        <Campo 
+          label="Categoria" 
+          placeholder="Digite o nome da categoria" 
+          obrigatorio={true} 
+          valor={nomeCategoria}
+          aoAlterar={valor => setNomeCategoria(valor)} 
+        />
+
+        <Campo 
+          type="color"
+          label="Cor" 
+          placeholder="Digite a cor da categoria"
+          obrigatorio={true}
+          valor={corCategoria} 
+          aoAlterar={valor => setCorCategoria(valor)} 
+        />
+
+        <Botao>
+          Criar nova categoria
         </Botao>
       </form>
     </section>
