@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Autorgano
+### Pedro Henrique Sousa Pires <br/>LinkedIn: https://www.linkedin.com/in/pedrohspires/ <br/>Instagram: https://www.instagram.com/pedroh.rar/
+<br/>
+<br/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Projeto
+Este projeto foi criado durante as aulas do curso "React: desenvolvendo com JavaScript", na plataforma Alura. Desenvolvemos uma aplicação para gerenciar times de desenvolvedores, onde é possível cadastrar um colaborador por categoria. Nessa etapa ainda não é utilizado banco de dados.
+<br/>
+<br/>
 
-## Available Scripts
+# Projeto modificado
+Diferente do projeto original criado pelo time da Alura, fiz um outro projeto modificando algumas informações e a proposta original do site. Antes a ideia original era de um site para gerenciar times de colaboradores em front-end, programadores, designers, etc. Eu o modifiquei para que fosse guardado carros separados por categoria, como SUVs, sedans, etc.
+<br/>
+<br/>
 
-In the project directory, you can run:
+# Rodar este projeto
+1. Clone o repositório<br/>
+  `git clone https://github.com/pedrohspires/autorgano-alura.git`
+2. Entre na pasta criada durante o clone<br/>
+`cd autorgano-alura` - caso esteja em um terminal
+3. Instale as dependencias do projeto<br/>
+`npm install`
+4. Execute o projeto com:<br/>
+`npm start`
+<br/>
+<br/>
 
-### `npm start`
+# Projeto rodando
+Este projeto também está em execução na Vercel (o deploy também fez parte do curso).<br/>
+Link: https://autorgano-alura.vercel.app/
+<br/>
+<br/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Fotos
+![Imagem do site](/public/imagens/p%C3%A1gina%20do%20site.png "Imagem do site").
