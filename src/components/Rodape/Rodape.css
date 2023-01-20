@@ -15,3 +15,7 @@
 .footer ul li:last-child {
   margin-right: 0;
 }
+
+.footer section #logo-img {
+  width: 110px;
+}

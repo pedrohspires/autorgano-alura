@@ -1,7 +1,8 @@
 import './Rodape.css'
 
 const Rodape = () => {
-    return (<footer className="footer">
+    return (
+    <footer className="footer">
         <section>
             <ul>
                 <li>
@@ -22,7 +23,7 @@ const Rodape = () => {
             </ul>
         </section>
         <section>
-            <img src="/imagens/logo.png" alt="" />
+            <img id="logo-img" src="/imagens/logo.png" alt="" />
         </section>
         <section>
             <p>
