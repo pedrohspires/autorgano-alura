@@ -2,66 +2,61 @@ import { useState } from 'react';
 import Banner from './components/Banner';
 import Formulario from './components/Formulario';
 import Rodape from './components/Rodape';
-import Time from './components/Time';
+import Categoria from './components/Categoria';
 
 function App() {
-  const [colaboradores, setColaboradores] = useState([]);
-  const times = [
+  const [carros, setCarros] = useState([]);
+  const categorias = [
     {
-      nome: "Programação",
+      nome: "Sedan",
       corPrimaria: "#57C278",
       corSecundaria: "#D9F7E9"
     },
     {
-      nome: "Front-end",
+      nome: "Hatch",
       corPrimaria: "#82CFFA",
       corSecundaria: "#E8F8FF"
     },
     {
-      nome: "Data Science",
+      nome: "SUV",
       corPrimaria: "#A6D157",
       corSecundaria: "#F0F8E2"
     },
     {
-      nome: "Devops",
+      nome: "Vans e utilitários",
       corPrimaria: "#E06B69",
       corSecundaria: "#FDE7R8"
     },
     {
-      nome: "UX e Design",
+      nome: "Esportivo",
       corPrimaria: "#DB6EBF",
       corSecundaria: "#FAE9F5"
     },
     {
-      nome: "Mobile",
+      nome: "Picape",
       corPrimaria: "#FFBA05",
       corSecundaria: "#FFF5D9"
-    },
-    {
-      nome: "Inovação e Gestão",
-      corPrimaria: "#FF8A29",
-      corSecundaria: "#FFEEDF"
     }
   ];
 
-  const aoNovoColaborador = (colaborador) => {
-    setColaboradores([...colaboradores, colaborador]);
+  const aoNovoCarro = (carro) => {
+    setCarros([...carros, carro]);
   }
 
   return (
     <div className="App">
       <Banner />
       <Formulario 
-        aoColaboradorCadastrado={aoNovoColaborador}
-        times={times.map(time => time.nome)}
+        aoCarroCadastrado={aoNovoCarro}
+        categorias={categorias.map(categoria => categoria.nome)}
       />
-      {times.map(
-        time => <Time 
-                  key={time.nome} 
-                  nome={time.nome} 
-                  corPrimaria={time.corPrimaria} 
-                  corSecundaria={time.corSecundaria} 
-                  colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+      {categorias.map(
+        categoria => <Categoria 
+                  key={categoria.nome} 
+                  nome={categoria.nome} 
+                  corPrimaria={categoria.corPrimaria} 
+                  corSecundaria={categoria.corSecundaria} 
+                  carros={carros.filter(carro => carro.categoria === categoria.nome)}
                 />)
       }
       <Rodape />
